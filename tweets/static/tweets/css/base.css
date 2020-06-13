@@ -1,0 +1,55 @@
+@keyframes slide-bottom {
+	0% {
+		transform: translateY(-100px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+@keyframes tracking-in-expand-fwd-top {
+	0% {
+		letter-spacing: -0.5em;
+		transform: translateZ(-700px) translateY(-500px);
+		opacity: 0;
+	}
+	40% {
+		opacity: 0.6;
+	}
+	100% {
+		transform: translateZ(0) translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes pulsate-bck {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.9);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.navbar {
+	animation-name: slide-bottom;
+	animation-duration: 0.4s;
+	animation-fill-mode: forwards;
+}
+
+.navbar .navbar-brand {
+	font-family: "Pacifico", cursive;
+	animation-name: tracking-in-expand-fwd-top;
+	animation-delay: 0.5s;
+	animation-duration: 0.9s;
+	animation-fill-mode: forwards;
+}
+
+.bg-tweetnav {
+	background-color: #e9c5ff;
+}
+
+.btn:active {
+	animation: pulsate-bck 0.099s ease-in-out both;
+}
