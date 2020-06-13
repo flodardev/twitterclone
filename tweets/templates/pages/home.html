@@ -1,0 +1,217 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="text-center">Tweet Home</h1>
+<hr />
+<div class="container" style="border: 1px solid black;">
+	<h3>Tweets</h3>
+	<div class="row">
+		<div class="col-md-4 mx-auto">
+			<form
+				class="form-group"
+				id="tweet-create-form"
+				action="/create-tweet"
+				method="POST"
+			>
+				{% csrf_token %}
+				<div
+					class="d-none alert alert-danger"
+					id="tweet-create-form-error"
+				></div>
+				<input name="next" type="hidden" value="/" />
+				<textarea
+					required
+					name="content"
+					class="form-control mb-2"
+					placeholder="Type your tweet here"
+				></textarea>
+				<button type="submit" class="btn btn-primary">Tweet</button>
+			</form>
+		</div>
+	</div>
+	<div id="tweets">
+		Replace me
+	</div>
+</div>
+<script>
+	// Handling error
+	function handleTweetCreateFormError(msg, display) {
+		var myErrorDiv = document.getElementById("tweet-create-form-error");
+		if (display === true) {
+			myErrorDiv.setAttribute("class", "d-block alert alert-danger");
+			myErrorDiv.innerText = msg;
+			// Show error
+		} else {
+			myErrorDiv.setAttribute("class", "d-none alert alert-danger");
+			myErrorDiv.innerText = "None";
+			// Hide error
+		}
+	}
+
+	// Handling form submission with JavaScript
+	function handleTweetCreateFormDidSubmit(event) {
+		event.preventDefault(); // Prevent default action
+		const myForm = event.target; // Get form html
+		const myFormData = new FormData(myForm); // Dict
+		// Init a new xhr request
+		const xhr = new XMLHttpRequest();
+		const url = myForm.getAttribute("action"); // Get attribute from form html element
+		const method = myForm.getAttribute("method");
+		const responseType = "json";
+		xhr.responseType = responseType;
+		xhr.open(method, url);
+		xhr.setRequestHeader("HTTP_X_REQUESTED_WITH", "XMLHttpRequest");
+		xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+		xhr.onload = () => {
+			if (xhr.status === 201) {
+				handleTweetCreateFormError("", false);
+				const newTweet = xhr.response;
+				const newTweetElement = formatTweetElement(newTweet);
+				const ogHTML = tweetsContainerEl.innerHTML;
+				tweetsContainerEl.innerHTML = newTweetElement + ogHTML;
+				myForm.reset();
+			} else if (xhr.status === 400) {
+				const errorJson = xhr.response;
+				const contentError = errorJson.content; // content is an array
+				let contentErrorMsg;
+				if (errorJson) {
+					contentErrorMsg = contentError[0];
+					if (contentErrorMsg) {
+						handleTweetCreateFormError(contentErrorMsg, true);
+					} else {
+						alert("There is a server error. Please try again.");
+					}
+				}
+			} else if (xhr.status === 401) {
+				alert("Please login to tweet.");
+				window.location.href = "/login";
+			} else if (xhr.status === 403) {
+				alert("Please login to tweet.");
+				window.location.href = "/login";
+			} else if (xhr.status === 500) {
+				alert("There is a server error. Please try again.");
+			}
+		};
+		xhr.onerror = () => {
+			alert("An error occured. Please try again later");
+		};
+		xhr.send(myFormData);
+	}
+	const tweetCreateFormEl = document.querySelector("#tweet-create-form");
+	tweetCreateFormEl.addEventListener("submit", handleTweetCreateFormDidSubmit);
+
+	const tweetsContainerEl = document.getElementById("tweets"); // Get html element then change html content
+
+	function loadTweets(tweetsElement) {
+		const xhr = new XMLHttpRequest();
+		const method = "GET"; // 'POST'
+		const url = "/tweets";
+		const responseType = "json";
+		// Response type
+		xhr.responseType = responseType;
+		// Open the url with the method
+		xhr.open(method, url);
+		// Upon recieving response
+		xhr.onload = () => {
+			// The response
+			const serverResponse = xhr.response;
+			// console.log(serverResponse);
+			const listedItems = serverResponse; // array
+			var finallistedItems = ""; // A string to be appended it is a html struct
+			var i; // a variable for iterating
+			for (i = 0; i < listedItems.length; i++) {
+				// Iterates through
+				//console.log(i);
+				//console.log(listedItems[i]);
+				var tweetObj = listedItems[i];
+				var currentItem = formatTweetElement(tweetObj);
+				// Append to the string
+				finallistedItems += currentItem;
+			}
+			tweets.innerHTML = finallistedItems;
+			//console.log(xhr.response.response);
+		};
+		// Send the response data
+		xhr.send();
+	}
+
+	loadTweets(tweetsContainerEl);
+
+	// Event handler
+	function handleTweetActionBtn(tweet_id, currentCount, action) {
+		var csrftoken = Cookies.get("csrftoken");
+		console.log(tweet_id, currentCount);
+		const url = "/api/tweets/action/";
+		const method = "POST";
+		// data is jsonified
+		const data = JSON.stringify({
+			id: tweet_id,
+			action: action,
+		});
+		const xhr = new XMLHttpRequest();
+		// Init a new xhr request
+		xhr.open(method, url);
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.setRequestHeader("HTTP_X_REQUESTED_WITH", "XMLHttpRequest");
+		xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+		xhr.setRequestHeader("X-CSRFToken", csrftoken);
+		// Response from the server
+		xhr.onload = () => {
+			console.log(xhr.status, xhr.response);
+			loadTweets(tweetsContainerEl);
+		};
+		// Send data
+		xhr.send(data);
+	}
+
+	// Like Button
+	function LikeBtn(tweet) {
+		return (
+			"<button class='btn btn-primary btn-sm' onclick=handleTweetActionBtn(" +
+			tweet.id +
+			"," +
+			tweet.likes +
+			",'like')>" +
+			tweet.likes +
+			" Likes</button>"
+		);
+	}
+
+	// Unlike Button
+	function UnlikeBtn(tweet) {
+		return (
+			"<button class='btn btn-outline-primary btn-sm' onclick=handleTweetActionBtn(" +
+			tweet.id +
+			"," +
+			tweet.likes +
+			",'unlike')>" +
+			"Unlike</button>"
+		);
+	}
+
+	// Retweet Button
+	function RetweetBtn(tweet) {
+		return (
+			"<button class='btn btn-outline-success btn-sm' onclick=handleTweetActionBtn(" +
+			tweet.id +
+			"," +
+			tweet.likes +
+			",'retweet')>" +
+			"Retweet</button>"
+		);
+	}
+
+	// Formatting tweets
+	function formatTweetElement(tweet) {
+		var formattedTweet =
+			"<div class='col-12 col-md-10 mx-auto border border-primary rounded mb-4 tweet p-2' id='tweet-" +
+			tweet.id +
+			"'><p>" +
+			tweet.content +
+			"</p><div>" +
+			LikeBtn(tweet) +
+			UnlikeBtn(tweet) +
+			RetweetBtn(tweet) +
+			"</div></div>";
+		return formattedTweet;
+	}
+</script>
+{% endblock %}

@@ -9,6 +9,14 @@
 	],
 "creatorBuild": "32186",
 "files": {
+	"/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.gitignore",
+		"oF": 0
+		},
 	"/db.sqlite3": {
 		"cB": 0,
 		"ft": 8192,
@@ -59,6 +67,49 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"/requirements.txt": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/requirements.txt",
+		"oF": 0
+		},
+	"/todo.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/todo.html",
+		"oF": 0
+		},
+	"/todo.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/todo.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"/tweets/__init__.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/tweets/__init__.py",
+		"oF": 0
 		},
 	"/tweets/__pycache__/__init__.cpython-38.pyc": {
 		"cB": 0,
@@ -114,6 +165,94 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/tweets/__pycache__/views.cpython-38.pyc",
+		"oF": 0
+		},
+	"/tweets/admin.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/admin.py",
+		"oF": 0
+		},
+	"/tweets/apps.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/apps.py",
+		"oF": 0
+		},
+	"/tweets/forms.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/forms.py",
+		"oF": 0
+		},
+	"/tweets/migrations/0001_initial.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/migrations/0001_initial.py",
+		"oF": 0
+		},
+	"/tweets/migrations/0002_auto_20200612_0929.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/migrations/0002_auto_20200612_0929.py",
+		"oF": 0
+		},
+	"/tweets/migrations/0003_tweet_user.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/migrations/0003_tweet_user.py",
+		"oF": 0
+		},
+	"/tweets/migrations/0004_auto_20200612_1223.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/migrations/0004_auto_20200612_1223.py",
+		"oF": 0
+		},
+	"/tweets/migrations/0005_auto_20200612_1229.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/migrations/0005_auto_20200612_1229.py",
+		"oF": 0
+		},
+	"/tweets/migrations/0006_auto_20200613_0742.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/migrations/0006_auto_20200613_0742.py",
+		"oF": 0
+		},
+	"/tweets/migrations/0007_tweet_parent.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/migrations/0007_tweet_parent.py",
+		"oF": 0
+		},
+	"/tweets/migrations/__init__.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/tweets/migrations/__init__.py",
 		"oF": 0
 		},
 	"/tweets/migrations/__pycache__/0001_initial.cpython-38.pyc": {
@@ -180,6 +319,148 @@
 		"oAP": "/tweets/migrations/__pycache__/__init__.cpython-38.pyc",
 		"oF": 0
 		},
+	"/tweets/models.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/models.py",
+		"oF": 0
+		},
+	"/tweets/serializers.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/serializers.py",
+		"oF": 0
+		},
+	"/tweets/static/tweets/css/base.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/tweets/static/tweets/css/base-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/tweets/static/tweets/css/base.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/tweets/static/tweets/css/base.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 0
+		},
+	"/tweets/static/tweets/svg/bubble.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/tweets/static/tweets/svg/bubble.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/tweets/static/tweets/svg/cartlogo.jpg": {
+		"ft": 16384,
+		"iS": 45954,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/tweets/static/tweets/svg/cartlogo.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/tweets/static/tweets/svg/twitter.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/tweets/static/tweets/svg/twitter.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/tweets/templates/base.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/templates/base.html",
+		"oF": 0
+		},
+	"/tweets/templates/components/footer.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/templates/components/footer.html",
+		"oF": 0
+		},
+	"/tweets/templates/components/form.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/templates/components/form.html",
+		"oF": 0
+		},
+	"/tweets/templates/components/navbar.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/templates/components/navbar.html",
+		"oF": 0
+		},
+	"/tweets/templates/pages/home.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/templates/pages/home.html",
+		"oF": 0
+		},
+	"/tweets/tests.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/tests.py",
+		"oF": 0
+		},
+	"/tweets/urls.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/urls.py",
+		"oF": 0
+		},
+	"/tweets/views.py": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/tweets/views.py",
+		"oF": 0
+		},
+	"/twitterclone-web/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/twitterclone-web/.gitignore",
+		"oF": 0
+		},
 	"/twitterclone-web/node_modules": {
 		"ft": 65536,
 		"oA": 2,
@@ -193,6 +474,17 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/twitterclone-web/node_modules/@sheerun/mutationobserver-shim/MutationObserver-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/twitterclone-web/node_modules/@testing-library/dom/dist/@testing-library/dom.esm.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/twitterclone-web/node_modules/@testing-library/dom/dist/@testing-library/dom.esm-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -219,6 +511,17 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/twitterclone-web/node_modules/@testing-library/react/dist/@testing-library/react.esm.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/twitterclone-web/node_modules/@testing-library/react/dist/@testing-library/react.esm-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/twitterclone-web/node_modules/dom-accessibility-api/dist/index.js": {
 		"bF": 0,
 		"ft": 64,
@@ -230,6 +533,28 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/twitterclone-web/node_modules/react-dom/index.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/twitterclone-web/node_modules/react-dom/index-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/twitterclone-web/node_modules/react/index.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/twitterclone-web/node_modules/react/index-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/twitterclone-web/node_modules/wait-for-expect/lib/index.js": {
 		"bF": 0,
 		"ft": 64,
@@ -237,6 +562,180 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/twitterclone-web/node_modules/wait-for-expect/lib/index-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/twitterclone-web/package-lock.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/twitterclone-web/package-lock-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/twitterclone-web/package.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/twitterclone-web/package-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/twitterclone-web/public/favicon.ico": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/twitterclone-web/public/favicon.ico",
+		"oF": 0
+		},
+	"/twitterclone-web/public/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/twitterclone-web/public/index.html",
+		"oF": 0
+		},
+	"/twitterclone-web/public/logo192.png": {
+		"ft": 32768,
+		"iS": 5347,
+		"oA": 0,
+		"oAP": "/twitterclone-web/public/logo192.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/twitterclone-web/public/logo512.png": {
+		"ft": 32768,
+		"iS": 9664,
+		"oA": 0,
+		"oAP": "/twitterclone-web/public/logo512.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/twitterclone-web/public/manifest.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/twitterclone-web/public/manifest-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/twitterclone-web/public/robots.txt": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/twitterclone-web/public/robots.txt",
+		"oF": 0
+		},
+	"/twitterclone-web/README.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/twitterclone-web/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"/twitterclone-web/src/App.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/twitterclone-web/src/App-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/twitterclone-web/src/App.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/twitterclone-web/src/App-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/twitterclone-web/src/App.test.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/twitterclone-web/src/App.test-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/twitterclone-web/src/index.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/twitterclone-web/src/index-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/twitterclone-web/src/index.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/twitterclone-web/src/index-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/twitterclone-web/src/logo.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/twitterclone-web/src/logo.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
+	"/twitterclone-web/src/serviceWorker.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/twitterclone-web/src/serviceWorker-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/twitterclone-web/src/setupTests.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/twitterclone-web/src/setupTests-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
