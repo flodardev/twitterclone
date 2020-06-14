@@ -26,7 +26,7 @@ SECRET_KEY = '6#6#1&*53t*ly0#ik1fng#as1)7isqh2g^pk$365=#p!aqsolj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'radolfproject4.herokuapp.com']
 LOGIN_URL = '/login'
 TWEET_ACTION_OPTIONS = ["like", "unlike", "retweet"]
 MAX_TWEET_LENGTH = 240
