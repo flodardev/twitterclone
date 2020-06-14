@@ -3,31 +3,52 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404, JsonResponse
 from django.utils.http import is_safe_url
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, renderer_classes
+from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
-from .forms import TweetForm
 from .models import Tweet
-from .serializers import TweetSerializer, TweetActionSerializer, TweetCreateSerializer
+from .serializers import TweetSerializer, TweetActionSerializer, TweetCreateSerializer, RegisterSerializer
 
 ALLOWED_HOSTS = settings.ALLOWED_HOSTS
 
-# Homepage
-def home(request):
+# Landing
+def landing_view(request):
+    return render(request, 'pages/landing.html')
+
+# Feed
+def feed_view(request):
     context = {}
-    return render(request, 'pages/home.html', context)
+    return render(request, 'pages/feed.html', context)
 
 # Login
-def login(request):
-    return HttpResponse("TODO LOGIN")
+@api_view(["POST"])
+def login_view(request):
+    username = request.POST.get('username', None)
+    password = request.POST.get('password', None)
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return redirect('feed')
+    else:
+        messages.warning(request, "Login failed.")
+        return redirect('feed')
+# Logout
+def logout_view(request):
+    logout(request)
+    return redirect('feed')
 
 # Register
-def register(request):
-    return HttpResponse("TODO REGISTER")
-
-# Logout
-def logout(request):
-    return HttpResponse("TODO LOGOUT")
+@api_view(["POST"])
+@renderer_classes((TemplateHTMLRenderer, JSONRenderer))
+def register_view(request):
+    serializer = RegisterSerializer(data=request.POST)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save()
+        return Response({}, status=201)
+    return Response({}, status=403)
 
 # REST Framework View
 @api_view(["POST"])
