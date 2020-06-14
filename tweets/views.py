@@ -42,13 +42,13 @@ def logout_view(request):
 
 # Register
 @api_view(["POST"])
-@renderer_classes((TemplateHTMLRenderer, JSONRenderer))
 def register_view(request):
     serializer = RegisterSerializer(data=request.POST)
     if serializer.is_valid(raise_exception=True):
         serializer.save()
-        return Response({}, status=201)
-    return Response({}, status=403)
+        return redirect('feed')
+    messages.warning(request, "Account creation failed.")
+    return redirect('feed')
 
 # REST Framework View
 @api_view(["POST"])

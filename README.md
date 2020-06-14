@@ -12,10 +12,14 @@ Python and Django
 
 - Python 3.8.3
 - Django 3.0.7
+- Used Django's built in authentication system
+- Created some tests in tests.py
+- HTMLS are separted into components
 
 REST Framework
 
 - REST API views for AJAX requests when someone post a tweet or retweet or like or unlike.
+- serializers.py
 
 JavaScript
 
@@ -25,6 +29,7 @@ JavaScript
 CSS Animations and Frontends
 
 - Experimented with CSS Animations!
+- SCSS
 
 SQL Database
 
