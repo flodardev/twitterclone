@@ -2,6 +2,8 @@
 
 #CS50W Final Project by flodardev/cs50xrll
 
+Hosted on Heroku: https://radolfproject4.herokuapp.com/
+
 This attempt is a Twitter-ish like app made with Python, Django, REST Framework and Pure Javascript.
 
 The app allows users to login, logout, register, tweet, retweet.
