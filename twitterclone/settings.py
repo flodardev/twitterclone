@@ -80,12 +80,14 @@ WSGI_APPLICATION = 'twitterclone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+'''
 
 import dj_database_url
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
@@ -127,13 +129,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-#DataFlair #Django #Static files
 STATIC_URL = '/static/'
-#--------------------------------------------------
-STATIC_ROOT = os.path.join(BASE_DIR, 'root')
-#-----------------------------------------------------
-STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'static'),
-]
 
 django_heroku.settings(locals())
