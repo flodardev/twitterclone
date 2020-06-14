@@ -41,12 +41,20 @@
 		"oAP": "/Pipfile",
 		"oF": 0
 		},
-	"/Pipfile.lock": {
+	"/Procfile": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
-		"oAP": "/Pipfile.lock",
+		"oAP": "/Procfile",
+		"oF": 0
+		},
+	"/README.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/README.html",
 		"oF": 0
 		},
 	"/README.md": {

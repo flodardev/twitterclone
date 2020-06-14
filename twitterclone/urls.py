@@ -25,8 +25,6 @@ urlpatterns = [
     path('create/', views.tweet_create_view, name="create"),
     path('tweets/', views.tweet_list_view, name="list"),
     path('tweets/<int:tweet_id>', views.tweet_detail_view, name='detail'),
-    #path('api/tweets/action', views.tweet_action_view, name="action"),
-    #path('api/tweets/<int:tweet_id>/delete', views.tweet_delete_view, name="delete")
     path('api/tweets/', include("tweets.urls")),
     path('register', views.register_view, name="register"),
     path('login', views.login_view, name="login"),
