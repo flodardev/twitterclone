@@ -107,6 +107,7 @@ def tweet_action_view(request):
         serializer = TweetSerializer(tweet)
         return Response(serializer.data, status=200)
     elif action == "retweet":
+        content = "remeowed@" + tweet.user.username + " > " + tweet.content
         new_tweet = Tweet.objects.create(user=request.user, parent=tweet, content=content)
         serializer = TweetSerializer(new_tweet)
         return Response(serializer.data, status=200)

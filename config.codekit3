@@ -350,6 +350,16 @@
 		"oS": 0,
 		"sct": 0
 		},
+	"/tweets/static/tweets/css/landing.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/tweets/static/tweets/css/landing-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/tweets/static/tweets/css/landing.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -384,6 +394,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/tweets/static/tweets/svg/cat.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/tweets/static/tweets/svg/cat.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
 	"/tweets/static/tweets/svg/twitter.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -408,14 +428,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/tweets/templates/components/authentication.html",
-		"oF": 0
-		},
-	"/tweets/templates/components/footer.html": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/tweets/templates/components/footer.html",
 		"oF": 0
 		},
 	"/tweets/templates/components/form.html": {
