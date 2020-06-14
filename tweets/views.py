@@ -17,6 +17,18 @@ def home(request):
     context = {}
     return render(request, 'pages/home.html', context)
 
+# Login
+def login(request):
+    return HttpResponse("TODO LOGIN")
+
+# Register
+def register(request):
+    return HttpResponse("TODO REGISTER")
+
+# Logout
+def logout(request):
+    return HttpResponse("TODO LOGOUT")
+
 # REST Framework View
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
@@ -78,68 +90,3 @@ def tweet_action_view(request):
         serializer = TweetSerializer(new_tweet)
         return Response(serializer.data, status=200)
     return Response({}, status=200)
-
-# Create a tweet
-def tweet_create_view_pure_django(request):
-    user = request.user
-    if not request.user.is_authenticated:
-        user = None
-        if request.is_ajax():
-            return JsonResponse({}, status=401)
-        return redirect(settings.LOGIN_URL)
-    form = TweetForm(request.POST or None)
-    next_url = request.POST.get("next", None)
-    if next_url is not None and is_safe_url(next_url, ALLOWED_HOSTS):
-        if form.is_valid():
-            obj = form.save(commit=False)
-            obj.user = user
-            obj.save()
-            if request.is_ajax():
-                return JsonResponse(obj.serialize(), status=201) # 201 is for created item
-            form = TweetForm()
-            return redirect(next_url)
-        if form.errors:
-            if request.is_ajax():
-                return JsonResponse(form.errors, status=400)
-    context = {
-        "form": form
-    }
-    return render(request, 'components/form.html', context)
-
-# List view
-def tweet_list_view_pure_django(request):
-    '''
-    REST API VIEW
-    RETURN JSON DATA
-    CONSUMED BY JAVASCRIPT
-    '''
-    qs = Tweet.objects.all()
-    tweets_list = [x.serialize() for x in qs]
-    data = {
-        "isUser": False,
-        "response": tweets_list
-    }
-    return JsonResponse(data)
-
-# Detail view
-def tweet_detail_view_pure_django(request, tweet_id, *args, **kwargs):
-    '''
-    REST API VIEW
-    RETURN JSON DATA
-    CONSUMED BY JAVASCRIPT
-    '''
-    data = {
-        "id": tweet_id,
-        # "content": tweet.content,
-        # "image_path" : tweet.image.url
-    }
-    status = 200
-    try:
-        tweet = Tweet.objects.get(id=tweet_id)
-        data["content"] = tweet.content
-    except:
-        data["message"] = "Not found"
-        status = 404
-
-    return JsonResponse(data, status=status)
-    
