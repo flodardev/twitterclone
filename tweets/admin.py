@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Tweet, TweetLike
 
+admin.site.site_header = 'For cats only'
+
 class TweetLikeAdmin(admin.TabularInline):
     model = TweetLike
 
